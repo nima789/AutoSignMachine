@@ -17,7 +17,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync My-Actions
+      - name: 同步
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
