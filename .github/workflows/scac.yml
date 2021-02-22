@@ -1,0 +1,26 @@
+name: scac
+on:
+  workflow_dispatch:
+    schedule: # 计划任务触发
+    - cron: '20 16 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
+    inputs:
+      days: #要保留的天数
+        description: 'Number of days.'
+        required: true
+        default: 1
+      runs: #要为每个yml保留的个数
+        description: 'Number of runs.'
+        required: true
+        default: 0
+
+jobs:
+  del_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: ${{ github.event.inputs.days }}
+          keep_minimum_runs: ${{ github.event.inputs.runs }}
