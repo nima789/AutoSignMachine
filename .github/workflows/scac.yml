@@ -2,7 +2,7 @@ name: scac
 on:
   workflow_dispatch:
     schedule: # 计划任务触发
-    - cron: '20 16 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
+    - cron: '20 15 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
     inputs:
       days: #要保留的天数
         description: 'Number of days.'
