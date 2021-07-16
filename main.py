@@ -15,7 +15,7 @@ TG_USER_ID = ''  # 用户、群组或频道 ID，示例：129xxx206
 TG_API_HOST = ''  # 自建 API 反代地址，供网络环境无法访问时使用，网络正常则保持默认
 
 # Server酱 http://sc.ftqq.com/?c=code
-SCKEY = ''  # 这里填Server酱的key，无需推送可不填 示例: SCU646xxxxxxxxdacd6a5dc3f6
+SCKEY = os.environ['SCKEY']  # 这里填Server酱的key，无需推送可不填 示例: SCU646xxxxxxxxdacd6a5dc3f6
 
 # sre24 https://sre24.com/
 SRE24_TOKEN = ''  # 填sre24的token
